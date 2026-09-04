@@ -1,0 +1,19 @@
+<header>
+<mat-toolbar>
+    <button matButton id="menu" type="button" (click)="drawer.toggle()">
+        <mat-icon class="icon">menu</mat-icon> <p>Menu</p>
+    </button>
+    <span class="flex-space"></span>
+    <h1 id="title">Movitae</h1>
+    <span class="flex-space"></span>
+    <button matButton id="login" type="button" routerLink="/login"><mat-icon class="icon" iconPositionEnd>person</mat-icon> <p>Login</p></button>
+</mat-toolbar>
+</header>
+
+    <mat-drawer #drawer class="menu-lateral" mode="side">
+        <p>teste</p>
+    </mat-drawer>
+
+
+
+
