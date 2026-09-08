@@ -1,0 +1,11 @@
+#menu{
+    background-color: var(--primary-color);
+    height: 100%;
+    width: 33%;
+}
+
+@media(min-width: 1024px){
+    #menu{
+        width: 25%;
+    }
+}
