@@ -1,0 +1,37 @@
+
+<h2>Login</h2>
+
+@if(errorLogin()){
+<p style="color: Red;">Não foi possível realizar o Login, tente novamente mais tarde.</p>
+}
+
+
+<section>
+
+<form [formGroup]="formulario">
+    <p>
+        <input type="email" formControlName="email" placeholder="E-mail">   
+    </p>
+    @if (formulario.get('email')?.touched && formulario.get('email')?.invalid) {
+        @if(formulario.get('email')?.errors?.['required']){
+            <small>E-mail obrigatório.</small>
+        }
+        @if(formulario.get('email')?.errors?.['email']){
+            <small>E-mail inválido.</small>
+        }
+    }
+
+    <p>
+        <input type="password" formControlName="senha" placeholder= "Senha">
+    </p>
+    @if (formulario.get('senha')?.touched && formulario.get('senha')?.invalid) {
+        @if(formulario.get('senha')?.errors?.['required']){
+            <small>E-mail obrigatório.</small>
+        }
+        @if(formulario.get('senha')?.errors?.['minlength']){
+            <small>Mínimo de três.</small>
+        }
+    }
+</form>
+
+<button type="button" (click)="logar()">Fazer Login</button>

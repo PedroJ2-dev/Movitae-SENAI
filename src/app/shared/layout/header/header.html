@@ -14,9 +14,14 @@
     teste
 </mat-menu>
 
+@if(estarLogado()){
+        <span>{{usuario()?.email}}</span>
+        <button mat-button (click)="sair()">Logout</button>
+      } @else {
+        <button mat-button routerLink="/login">Login</button>
+      }
 
 
-    
 
 
 
