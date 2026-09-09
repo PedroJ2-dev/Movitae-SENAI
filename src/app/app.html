@@ -1,7 +1,7 @@
 <mat-drawer-container [hasBackdrop]="true">
-    <mat-drawer id="menu" #drawer mode="over">
-        <button id="close-menu" type="button" (click)="drawer.close()">
-            <mat-icon class="icon">close</mat-icon>
+    <mat-drawer id="menu" #drawer mode="over" (mouseleave)="drawer.close()">
+        <button id="home" type="button" (click)="drawer.close()" routerLink="/home">
+            <mat-icon class="icon">home</mat-icon>
         </button>
     </mat-drawer>
 
