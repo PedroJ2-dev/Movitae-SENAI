@@ -1,2 +1,16 @@
-<img id="logo-video">
+<main>
+    <video src="videos/logoVideo.mp4" autoplay loop id="logo-video"></video>
+    <section id="categorias-lista">
+        <h2>O primeiro passo é o mais importante</h2>
+        @for (pagina of paginas; track $index) {
+            <mat-card class="categoria-card" appearance="outlined">
+                <img mat-card-image [src]="pagina.imagen" [alt]="pagina.alt">
+                <h3>{{ pagina.nome }} </h3>
+                <p>{{ pagina.descricao }}</p>
+                <button matButton [routerLink]="pagina.path"><mat-icon>arrow_forward</mat-icon></button>
+            </mat-card>
+        }
+    </section>
+</main>
+
 
