@@ -1,27 +1,31 @@
 <header>
-<mat-toolbar>
-    <button matButton type="button" (click)="openMenu.emit()">
-        <mat-icon class="icon">menu</mat-icon> <p>Menu</p>
-    </button>
-    <span class="flex-space"></span>
-    <h1 id="title">Movitae</h1>
-    <span class="flex-space"></span>
-    @if(estarLogado()){
+    <mat-toolbar>
+        <button matButton type="button" (click)="openMenu.emit()">
+            <mat-icon class="icon">menu</mat-icon>
+            <p>Menu</p>
+        </button>
+        <span class="flex-space"></span>
+        <h1 id="title">Movitae</h1>
+        <span class="flex-space"></span>
+        @if(estarLogado()){
         <span>{{usuario()?.email}}</span>
         <button mat-button (click)="sair()">Logout</button>
+<<<<<<< HEAD
       } @else {
         <button matButton id="login" type="button" routerLink="/login" [matMenuTriggerFor]="menu"><mat-icon class="icon" iconPositionEnd>person</mat-icon> <p>Login</p></button>
       }  
 </mat-toolbar>
+=======
+        } @else {
+        <button matButton id="login" type="button" routerLink="/login" [matMenuTriggerFor]="menu"><mat-icon class="icon"
+                iconPositionEnd>person</mat-icon>
+            <p>Login</p>
+        </button>
+        }
+    </mat-toolbar>
+>>>>>>> b9aef2317329db7c544843e305c5b7647b8e7779
 </header>
 
 <mat-menu #menu="matMenu" xPosition=before>
     teste
 </mat-menu>
-
-
-
-
-
-
-
