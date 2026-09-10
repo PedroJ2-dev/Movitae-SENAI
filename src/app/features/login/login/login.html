@@ -26,10 +26,10 @@
     </p>
     @if (formulario.get('senha')?.touched && formulario.get('senha')?.invalid) {
         @if(formulario.get('senha')?.errors?.['required']){
-            <small>E-mail obrigatório.</small>
+            <small>Senha obrigatório.</small>
         }
         @if(formulario.get('senha')?.errors?.['minlength']){
-            <small>Mínimo de três.</small>
+            <small>Mínimo de três caracteres.</small>
         }
     }
 </form>
