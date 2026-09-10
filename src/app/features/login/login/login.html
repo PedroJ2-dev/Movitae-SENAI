@@ -1,8 +1,8 @@
 
-<h2>Login</h2>
+<h2 class="Titulo">Login</h2>
 
-@if(errorLogin()){
-<p style="color: Red;">Não foi possível realizar o Login, tente novamente mais tarde.</p>
+@if(erroLogin()){
+<p class="Erro" style="color: Red;">Não foi possível realizar o Login, tente novamente mais tarde.</p>
 }
 
 
@@ -34,4 +34,4 @@
     }
 </form>
 
-<button type="button" (click)="logar()">Fazer Login</button>
+<button type="button" (click)="entrar()">Fazer Login</button>

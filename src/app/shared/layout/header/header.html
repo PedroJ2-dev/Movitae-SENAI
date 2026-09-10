@@ -6,7 +6,12 @@
     <span class="flex-space"></span>
     <h1 id="title">Movitae</h1>
     <span class="flex-space"></span>
-    <button matButton id="login" type="button" routerLink="/login" [matMenuTriggerFor]="menu"><mat-icon class="icon" iconPositionEnd>person</mat-icon> <p>Login</p></button>
+    @if(estarLogado()){
+        <span>{{usuario()?.email}}</span>
+        <button mat-button (click)="sair()">Logout</button>
+      } @else {
+        <button matButton id="login" type="button" routerLink="/login" [matMenuTriggerFor]="menu"><mat-icon class="icon" iconPositionEnd>person</mat-icon> <p>Login</p></button>
+      }
 </mat-toolbar>
 </header>
 
@@ -14,12 +19,6 @@
     teste
 </mat-menu>
 
-@if(estarLogado()){
-        <span>{{usuario()?.email}}</span>
-        <button mat-button (click)="sair()">Logout</button>
-      } @else {
-        <button mat-button routerLink="/login">Login</button>
-      }
 
 
 
