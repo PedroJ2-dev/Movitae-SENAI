@@ -1,0 +1,11 @@
+mat-card {
+    max-width: 230px;
+    margin: 10px;
+    border: 1px solid #d44f08;
+    padding: 8px;
+    transition: 0.5s;
+}
+
+mat-card:hover {
+    transform: scaleY(-5px);
+}

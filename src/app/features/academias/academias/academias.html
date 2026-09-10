@@ -1,13 +1,13 @@
-<h2></h2>
+<mat-card class="card-academia" appearance="outlined">
+   
+        <img mat-card-image [src]="imagem" alt="imagem da unidade">
+        <mat-card-title> {{ nome }}</mat-card-title>
+    
+        <p> {{ endereco }} </p>
+        <p> {{ contato }} </p>
 
-<section class="Gymlist">
 
-<article class="Gymcard">
-<mat-card>
-<h2>Belford Roxo</h2>
-<iframe src="" frameborder="0"></iframe>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="selecionarAcademia()">Selecionar Academia</button>
+    </mat-card-actions>
 </mat-card>
-</article>
-
-
-</section>

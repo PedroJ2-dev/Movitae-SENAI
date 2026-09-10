@@ -1,0 +1,15 @@
+<h2>Conheça Nossas Academias:</h2>
+
+<section class="Gymlist">
+@for (academia of academias; track $index) {
+    <article class="Gymcard">
+       <app-academias
+       [nome]="academia.nome"
+       [endereco]="academia.endereco"
+       [contato]="academia.contato"
+       [imagem]="academia.imagem">
+       
+       </app-academias>
+    </article>
+}
+</section>

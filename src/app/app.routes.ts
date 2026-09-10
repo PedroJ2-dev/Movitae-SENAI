@@ -9,6 +9,11 @@ export const routes: Routes = [
 path: 'login',
 loadComponent: () => import('./features/login/login/login').then((m)=>m.Login) 
 },
-    {path:"**", redirectTo:""}
+{
+    path: 'academias',
+    loadComponent: () => import('./features/academias/lista-academias/lista-academias').then((m) => m.ListaAcademias)
+},
+{path:"**", redirectTo:""}
+
 ];
 
