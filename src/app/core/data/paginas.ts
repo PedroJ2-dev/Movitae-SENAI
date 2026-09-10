@@ -1,28 +1,32 @@
 import { Pagina } from "../models/item-pagina";
 
-export const paginas: Pagina[] = [
+export const PAGINAS: Pagina[] = [
     {
         nome: "Academias",
         descricao: "Encontre as academias mais proximas de você",
-        imagen: " ",
+        imagen: "imagens/categorias/academia.png",
+        alt: "Uma imagen da fachada de uma academia",
         path: "/academias"
     },
     {
         nome: "Aulas",
         descricao: "Se matricule em uma de nossas aulas, e aproveite cada segundo",
-        imagen: " ",
+        imagen: "imagens/categorias/aulas.png",
+        alt: "Uma imagen de um grupo de pessoas fazendo aeróbico",
         path: "/aulas"
     },
     {
         nome: "Instrutores",
         descricao: "Entre em contato com nossos instrutores veja os horarios disponiveis e marque uma avaliação fisica!",
-        imagen: " ",
+        imagen: "imagens/categorias/instrutores.png",
+        alt: "Uma imagen de um instrutor ensinando a fazer desenvolvimento de ombro",
         path: "/instrutores"
     },
     {
-        nome: "Assinatura",
+        nome: "Assinaturas",
         descricao: "Assine nosso plano e tenha acesso a todos nossos aulões e acompanhementos exclusivo",
-        imagen: " ",
-        path: "/assinatura"
+        imagen: "imagens/categorias/assinaturas.png",
+        alt: "Uma imagen de uma mulher anotando as finanças em um papel",
+        path: "/assinaturas"
     },
 ]

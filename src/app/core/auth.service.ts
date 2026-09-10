@@ -1,9 +1,8 @@
 import { Injectable, computed, signal } from "@angular/core";
-import { email } from "@angular/forms/signals";
-
+type PerfilUsuario = 'usuario' | 'admin';
 type Usuario ={
     email:string;
-    perfil:'usuario'
+    perfil:PerfilUsuario
 };
 
 @Injectable({
@@ -12,29 +11,38 @@ type Usuario ={
 
 export class AuthService{
 
-private usuario = signal<Usuario|null>(null);
-
+private usuario = signal<Usuario | null>(null);
+private tokenJwt = signal<string | null>(null);
 usuarioAtual = computed(()=> this.usuario())
     estaLogado = computed(() => this.usuario() !== null)
+    modoAdmin = computed(() => this.usuario()?.perfil === 'admin')
+token = computed(() => this.tokenJwt());
 
+login(email: string, senha: string): boolean {
 
-    login(email: string, senha: string){
-        if(!email || !senha){
-            return false
-        }
-this.usuario.set(
-        {
-            email,
-            perfil:'usuario'
-        }
-    );
-
-    return true;
-
-    }
-
-     logout(){
-        this.usuario.set(null);
-}
+if (!email || !senha) {
+return false;
 }
 
+const perfil: PerfilUsuario = email === 'admin@email.com' ? 'admin' : 'usuario';
+const tokenSimulado =
+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.' +
+'eyJzdWIiOiJhbHVub0B0ZXN0ZS5jb20iLCJwZXJmaWwiOiJ1c3VhcmlvIn0.' +
+'assinatura-simulada';
+
+this.usuario.set({email,perfil,});
+
+this.tokenJwt.set(tokenSimulado);
+return true;
+}
+logout() {
+this.usuario.set(null);
+this.tokenJwt.set(null);
+}
+obterToken(): string | null {
+return this.tokenJwt();
+}
+obterPerfil(): PerfilUsuario | null {
+return this.usuario()?.perfil ?? null;
+}
+}
