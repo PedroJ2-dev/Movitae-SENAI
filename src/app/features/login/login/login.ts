@@ -2,6 +2,7 @@ import { Component, inject, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthFacade } from '../../../core/Facade/auth.facade';
+
 @Component({
 selector: 'app-login',
 imports: [ReactiveFormsModule],
@@ -23,6 +24,7 @@ if (this.formulario.invalid) {
 this.formulario.markAllAsTouched();
 return;
 }
+
 const email = this.formulario.value.email ?? '';
 const senha = this.formulario.value.senha ?? '';
 const loginRealizado = this.authFacade.logar(email, senha);
