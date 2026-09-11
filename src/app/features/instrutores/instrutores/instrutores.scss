@@ -1,12 +1,42 @@
 .card-padrao{
-    height: 385px;
+    height: 405px;
     flex-flow: row wrap;
+
+    border: 1px solid #ED903A;
+
 
     img{
         height: 240px;
-        width: 100vh;
+        width: 100%;
+        
     }
+
+    transition: 0.5s;
 }
+
 #avatar{
     background-size: cover;
+    margin-left: 4px;
 }
+
+mat-card button{
+    position: relative;
+    bottom: 8px;
+}
+
+mat-card-title {
+    position: relative;
+    left: 12px;
+    top: 4px
+}
+
+#cell {
+    position: relative;
+    bottom: 6px;
+}
+
+.card-padrao:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--border-shadow);
+}
+
