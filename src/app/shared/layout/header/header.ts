@@ -4,7 +4,7 @@ import { MatIcon } from '@angular/material/icon';
 import { MatAnchor } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
-import { AuthService } from '../../../core/auth.service';
+import { AuthFacade } from '../../../core/Facade/auth.facade';
 
 @Component({
   selector: 'app-header',
@@ -14,14 +14,14 @@ import { AuthService } from '../../../core/auth.service';
 })
 export class Header {
   showFiller = false;
-private authservice = inject(AuthService)
+  private authFacade = inject(AuthFacade)
 
-  estarLogado= this.authservice.estaLogado
-usuario= this.authservice.usuarioAtual;
+  estarLogado = this.authFacade.estaLogado
+  usuario = this.authFacade.usuarioAtual;
 
-sair(){
-  this.authservice.logout()
-}
+  sair() {
+    this.authFacade.logout()
+  }
 
   @Output() openMenu = new EventEmitter<void>();
 }

@@ -1,0 +1,79 @@
+<section class="section-padrao">
+  <section class="card-section">
+    @if (nenhumInstrutor() && !ehAdmin()) {
+      <p id="aviso">Não tem nenhum instrutor disponivel, tente novamente mais tarde</p>
+    }
+
+    @for (instrutor of instrutores(); track $index) {
+      <app-instrutores
+        [nome]="instrutor.nome"
+        [avatar]="instrutor.avatar"
+        [fisico]="instrutor.fisico"
+        [cel]="instrutor.cel"
+        (remover)="remover($index)"
+      ></app-instrutores>
+    }
+
+    @if (ehAdmin()) {
+      <mat-card class="card-padrao card-input">
+        <form [formGroup]="formInstrutor">
+          <mat-form-field>
+            <mat-label>Nome</mat-label>
+            <input type="text" matInput formControlName="nome" />
+            @if (formInstrutor.get('nome')?.dirty && formInstrutor.get('nome')?.invalid) {
+              @if (formInstrutor.get('nome')?.errors?.['required']) {
+                <mat-error>Nome obrigatório.</mat-error>
+              }
+              @if (formInstrutor.get('nome')?.errors?.['minlength']) {
+                <mat-error>Minimo 4 letras.</mat-error>
+              }
+            }
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Avatar</mat-label>
+            <input type="url" matInput formControlName="avatar" />
+            @if (formInstrutor.get('avatar')?.dirty && formInstrutor.get('avatar')?.invalid) {
+              @if (formInstrutor.get('avatar')?.errors?.['required']) {
+                <mat-error>Avatar obrigatório.</mat-error>
+              }
+              @if (formInstrutor.get('avatar')?.errors?.['pattern']) {
+                <mat-error>Url de imagen inválido.</mat-error>
+              }
+            }
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Fisico</mat-label>
+            <input type="url" matInput formControlName="fisico" />
+            @if (formInstrutor.get('fisico')?.dirty && formInstrutor.get('fisico')?.invalid) {
+              @if (formInstrutor.get('fisico')?.errors?.['required']) {
+                <mat-error>Fisico obrigatório.</mat-error>
+              }
+              @if (formInstrutor.get('fisico')?.errors?.['pattern']) {
+                <mat-error>Url de imagen inválido.</mat-error>
+              }
+            }
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Celular</mat-label>
+            <input type="text" matInput formControlName="cel" maxlength="11"/>
+            @if (formInstrutor.get('cel')?.dirty && formInstrutor.get('cel')?.invalid) {
+              @if (formInstrutor.get('cel')?.errors?.['required']) {
+                <mat-error>Celular é obrigatório.</mat-error>
+              }
+              @if (formInstrutor.get('cel')?.errors?.['digitoInvalido']) {
+                <mat-error>Digite somente numeros.</mat-error>
+              }
+              @if (formInstrutor.get('cel')?.errors?.['minlength']) {
+                <mat-error>Digite 11 numeros.</mat-error>
+              }
+            }
+          </mat-form-field>
+        </form>
+
+        <button matButton type="button" (click)="adicionarInstrutor()">
+          <mat-icon>add</mat-icon>Adicionar
+        </button>
+      </mat-card>
+    }
+  </section>
+</section>

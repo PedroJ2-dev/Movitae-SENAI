@@ -1,4 +1,4 @@
-export type Pagina = {
+export type ItemPagina = {
     nome: string,
     descricao: string,
     imagen: string,

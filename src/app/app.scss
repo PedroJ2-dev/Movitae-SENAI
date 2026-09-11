@@ -1,9 +1,29 @@
+main{
+    flex: 1;
+    margin-top: 70px;
+}
+h4{
+    cursor: pointer;
+    color: black;
+}
+.icon{
+    transform: scale(1.6);
+    cursor: pointer;
+    margin: 3px 0 0 3px;
+    color: black;
+}
 #menu{
     background-color: var(--primary-color);
     height: 100%;
     width: 33%;
     position: fixed;
     z-index: 100;
+    padding: 6px;
+}
+#pagina{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 @media(min-width: 1024px){

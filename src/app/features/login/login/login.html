@@ -1,37 +1,37 @@
+<section class="section-padrao">
+  <h2>Login</h2>
+  <form [formGroup]="formulario">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email" />
+      @if (formulario.get('email')?.dirty && formulario.get('email')?.invalid) {
+        @if (formulario.get('email')?.errors?.['required']) {
+          <mat-error>E-mail obrigatório.</mat-error>
+        }
+        @if (formulario.get('email')?.errors?.['email']) {
+          <mat-error>E-mail inválido.</mat-error>
+        }
+      }
+    </mat-form-field>
 
-<h2 class="Titulo">Login</h2>
+    <mat-form-field>
+      <mat-label>Senha</mat-label>
+      <input type="password" matInput formControlName="senha" />
+      @if (formulario.get('senha')?.dirty && formulario.get('senha')?.invalid) {
+        @if (formulario.get('senha')?.errors?.['required']) {
+          <mat-error>Senha obrigatório.</mat-error>
+        } @else if (formulario.get('senha')?.errors?.['minlength']) {
+          <mat-error>Mínimo de três caracteres.</mat-error>
+        }
+      }
+    </mat-form-field>
+  </form>
 
-@if(erroLogin()){
-<p class="Erro" style="color: Red;">Não foi possível realizar o Login, tente novamente mais tarde.</p>
-}
+  <button type="button" (click)="entrar()">Fazer Login</button>
 
-
-<section>
-
-<form [formGroup]="formulario">
-    <p>
-        <input type="email" formControlName="email" placeholder="E-mail">   
+  @if (erroLogin()) {
+    <p class="Erro" style="color: Red">
+      Não foi possível realizar o Login, tente novamente mais tarde.
     </p>
-    @if (formulario.get('email')?.touched && formulario.get('email')?.invalid) {
-        @if(formulario.get('email')?.errors?.['required']){
-            <small>E-mail obrigatório.</small>
-        }
-        @if(formulario.get('email')?.errors?.['email']){
-            <small>E-mail inválido.</small>
-        }
-    }
-
-    <p>
-        <input type="password" formControlName="senha" placeholder= "Senha">
-    </p>
-    @if (formulario.get('senha')?.touched && formulario.get('senha')?.invalid) {
-        @if(formulario.get('senha')?.errors?.['required']){
-            <small>Senha obrigatório.</small>
-        }
-        @if(formulario.get('senha')?.errors?.['minlength']){
-            <small>Mínimo de três caracteres.</small>
-        }
-    }
-</form>
-
-<button type="button" (click)="entrar()">Fazer Login</button>
+  }
+</section>

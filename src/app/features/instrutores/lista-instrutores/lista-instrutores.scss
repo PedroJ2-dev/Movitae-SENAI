@@ -1,0 +1,23 @@
+button{
+    align-self: flex-start;
+}
+#aviso{
+    text-align: center;
+}
+.card-padrao{
+    height: 385px;
+
+    
+}
+.card-input{
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+    
+    &:hover{
+        transform: none !important;
+    }
+}
+.section-padrao{
+    margin-top: 30px;
+}

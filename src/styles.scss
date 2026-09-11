@@ -6,29 +6,69 @@
 @use '@angular/material' as mat;
 @use 'app/theme-colors.scss' as my-theme;
 
-:root{
+:root {
   --primary-color: #ED903A;
-  --border-shadow: 0px 3px 9px rgba(0,0,0,0.2);
+  --border-shadow: 0px 3px 9px rgba(0, 0, 0, 0.2);
 }
 
-section{
-  width: 98%;
+.card-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.card-padrao {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 350px;
+  
+  h3 {
+    padding: 4px;
+    margin-left: 8px;
+  }
+
+  p {
+    padding: 4px;
+    flex: 1 1 auto;
+    margin-left: 8px;
+  }
+
+  img {
+    height: 150px;
+    margin-bottom: 8px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  transition: all 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.section-padrao {
+  width: 96%;
   margin: 0 auto;
   box-shadow: var(--border-shadow);
+  padding: 10px;
+  border-radius: 10px;
 }
 
 html {
   height: 100%;
-  @include mat.theme(
-    (
-      color: (
-        primary: my-theme.$primary-palette,
+  @include mat.theme((color: (primary: my-theme.$primary-palette,
         tertiary: my-theme.$tertiary-palette,
       ),
       typography: Roboto,
       density: 0,
-    )
-  );
+    ));
 }
 
 body {
@@ -47,4 +87,12 @@ body {
   // Reset the user agent margin.
   margin: 0;
   height: 100%;
+}
+
+@media(min-width: 1024px) {}
+
+@media(min-width: 768px) {
+  .card-section {
+    flex-flow: row wrap;
+  }
 }

@@ -1,11 +1,16 @@
-mat-card {
-    max-width: 230px;
-    margin: 10px;
-    border: 1px solid #d44f08;
-    padding: 8px;
-    transition: 0.5s;
+.card-padrao{
+ margin-top: 10px;
+ margin-bottom: 10px;
+ border: 1px solid var(--primary-color);
+ transition: 0.5s;
 }
 
-mat-card:hover {
-    transform: scaleY(-5px);
+.card-padrao:hover{
+    box-shadow: var(--border-shadow);
+}
+
+mat-card-title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    margin-left: 8px;
 }

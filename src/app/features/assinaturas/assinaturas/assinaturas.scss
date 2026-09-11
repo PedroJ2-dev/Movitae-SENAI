@@ -1,0 +1,81 @@
+
+.assinaturas {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.assinaturas-header {
+    text-align: center;
+    margin-bottom: 30px;
+
+    h2 {
+        margin-bottom: 8px;
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+.planos {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.plano {
+    width: 320px;
+    min-height: 380px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: 0.3s;
+    border: 2px solid black;
+}
+
+.plano:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 3px 9px rgba(0, 0, 0, 0.2);
+}
+
+.plano mat-card-content {
+    flex: 1;
+}
+
+.preco {
+    margin: 25px 0;
+
+    strong {
+        font-size: 28px;
+    }
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+
+    mat-icon {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+mat-card-actions {
+    padding: 16px;
+
+    button {
+        width: 100%;
+    }
+}

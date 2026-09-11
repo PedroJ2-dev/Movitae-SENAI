@@ -5,17 +5,12 @@
             <p>Menu</p>
         </button>
         <span class="flex-space"></span>
-        <h1 id="title">Movitae</h1>
+        <h1 id="title" routerLink="">Movitae</h1>
         <span class="flex-space"></span>
         @if(estarLogado()){
-        <span>{{usuario()?.email}}</span>
-        <button mat-button (click)="sair()">Logout</button>
+        <mat-icon class="icon" (click)="sair()" routerLink="home">logout</mat-icon>
       } @else {
-        <button matButton id="login" type="button" routerLink="/login" [matMenuTriggerFor]="menu"><mat-icon class="icon" iconPositionEnd>person</mat-icon> <p>Login</p></button>
+        <button matButton id="login" type="button" routerLink="/login"><mat-icon class="icon" iconPositionEnd>person</mat-icon> <p>Login</p></button>
       }  
 </mat-toolbar>
 </header>
-
-<mat-menu #menu="matMenu" xPosition=before>
-    teste
-</mat-menu>

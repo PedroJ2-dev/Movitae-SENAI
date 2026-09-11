@@ -1,0 +1,80 @@
+
+<section class="assinaturas">
+    <header class="assinaturas-header">
+        <h2>Escolha sua assinatura</h2>
+        <p>Tenha acesso a todos os recursos do Movitae.</p>
+    </header>
+
+    <article class="planos">
+
+        <mat-card class="plano">
+            <mat-card-header>
+                <mat-card-title>Plano Mensal</mat-card-title>
+                <mat-card-subtitle>Flexibilidade para você</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content>
+                <p class="preco">
+                    <strong>$ 9,90</strong> / mês
+                </p>
+
+                <ul>
+                    <li>
+                        <mat-icon>check</mat-icon>
+                        Acesso às aulas
+                    </li>
+                    <li>
+                        <mat-icon>check</mat-icon>
+                        Acompanhamento de atividades
+                    </li>
+                    <li>
+                        <mat-icon>check</mat-icon>
+                        Cancelamento a qualquer momento
+                    </li>
+                </ul>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button matButton="outlined" (click)="assinar()">
+                    Assinar mensal
+                </button>
+            </mat-card-actions>
+        </mat-card>
+
+
+        <mat-card class="plano">
+            <mat-card-header>
+                <mat-card-title>Plano Anual</mat-card-title>
+                <mat-card-subtitle>Melhor custo-benefício</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content>
+                <p class="preco">
+                    <strong>$ 99,90</strong> / ano
+                </p>
+
+                <ul>
+                    <li>
+                        <mat-icon>check</mat-icon>
+                        Acesso às aulas
+                    </li>
+                    <li>
+                        <mat-icon>check</mat-icon>
+                        Acompanhamento de atividades
+                    </li>
+                    <li>
+                        <mat-icon>check</mat-icon>
+                        Acesso durante todo o ano
+                    </li>
+                </ul>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button matButton="filled" (click)="assinar()">
+                    Assinar anual
+                </button>
+            </mat-card-actions>
+        </mat-card>
+
+    </article>
+</section>

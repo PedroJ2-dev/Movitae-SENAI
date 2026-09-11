@@ -3,6 +3,7 @@ import { RouterOutlet, RouterLinkWithHref } from '@angular/router';
 import { Header } from './shared/layout/header/header';
 import { Footer } from './shared/layout/footer/footer';
 import { MatDrawerContainer, MatDrawer, MatDrawerContent } from '@angular/material/sidenav';
+import { PAGINAS } from './core/data/paginas';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
@@ -13,6 +14,8 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class App {
   protected readonly title = signal('Movitae');
+
+  paginas = PAGINAS;
 }
 
 /*

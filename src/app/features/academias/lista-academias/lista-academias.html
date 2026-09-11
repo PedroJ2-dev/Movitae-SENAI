@@ -1,15 +1,25 @@
 <h2>Conheça Nossas Academias:</h2>
 
-<section class="Gymlist">
-@for (academia of academias; track $index) {
-    <article class="Gymcard">
-       <app-academias
-       [nome]="academia.nome"
-       [endereco]="academia.endereco"
-       [contato]="academia.contato"
-       [imagem]="academia.imagem">
-       
-       </app-academias>
-    </article>
-}
+<section class="card-section">
+  @for (academia of academias; track $index) {
+    <app-academias
+      [nome]="academia.nome"
+      [endereco]="academia.endereco"
+      [contato]="academia.contato"
+      [imagem]="academia.imagem"
+      (academiaSelecionada)="exibirAcademia($event)">
+    </app-academias>
+  }
 </section>
+
+<section class="produto-selecionado">
+    <h3>Produto selecionado</h3>
+
+    @if (academiaSelecionada()) {
+      <p class="texto-sucesso">{{ academiaSelecionada() }}</p>
+    } @else {
+      <p class="texto-neutro">Nenhum produto selecionado.</p>
+    }
+</section>
+
+  

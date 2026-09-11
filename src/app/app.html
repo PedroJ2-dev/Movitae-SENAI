@@ -1,14 +1,18 @@
 <mat-drawer-container [hasBackdrop]="true">
     <mat-drawer id="menu" #drawer mode="over" (mouseleave)="drawer.close()">
-        <button id="home" type="button" (click)="drawer.close()" routerLink="/home">
-            <mat-icon class="icon">home</mat-icon>
-        </button>
+        <mat-icon class="icon" (click)="drawer.close()" routerLink="/home">home</mat-icon>
+        @for (pagina of paginas; track $index) {
+            <h4 [routerLink]="pagina.path" (click)="drawer.close()">{{pagina.nome}}</h4>
+        }
     </mat-drawer>
 
-    <mat-drawer-content>
+    <mat-drawer-content id="pagina">
         <app-header (openMenu)="drawer.open()"></app-header>
 
-        <router-outlet id="main"></router-outlet>
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+        
 
         <app-footer></app-footer>
     </mat-drawer-content>

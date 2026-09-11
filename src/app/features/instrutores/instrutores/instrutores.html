@@ -1,0 +1,9 @@
+<mat-card class="card-padrao" appearance="outlined">
+    <div id="avatar" mat-card-avatar [style.background-image]="'url(' + avatar + ')'"></div>
+    <mat-card-title>{{ nome }}</mat-card-title>
+    <img mat-card-image [src]="fisico">
+    <p><mat-icon>call</mat-icon> {{cel}}</p>
+    @if(authFacade.ehAdmin()){
+        <button matButton color="warn" (click)="removerInstrutor()">Remover</button>
+    }
+</mat-card>

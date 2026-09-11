@@ -4,6 +4,10 @@ $icons-size: 25px;
     color: black;
 }
 
+.icon{
+    cursor: pointer;
+}
+
 p{
     font-size: $icons-size - 8;
 }
@@ -32,7 +36,12 @@ button{
 }
 
 #title{ 
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
     font-size: $icons-size;
+    cursor: pointer;
 }
 
 .flex-space{ 

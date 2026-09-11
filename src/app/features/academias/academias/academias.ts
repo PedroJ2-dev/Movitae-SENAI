@@ -1,11 +1,11 @@
 import { Component, Input, Output, EventEmitter, Type } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
-import { MatCardActions, MatCardHeader, MatCard, MatCardContent, MatCardTitle, MatCardImage } from '@angular/material/card';
+import { MatCardActions, MatCard, MatCardTitle, MatCardImage } from '@angular/material/card';
 
 @Component({
   selector: 'app-academias',
-  imports: [MatCard, MatButton, MatCardActions, MatCardHeader, MatCardContent, MatCardTitle, MatCardImage],
+  imports: [MatCard, MatButton, MatCardActions, MatCardTitle, MatCardImage],
   templateUrl: './academias.html',
   styleUrl: './academias.scss',
 })

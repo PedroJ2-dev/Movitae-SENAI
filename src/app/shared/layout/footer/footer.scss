@@ -1,34 +1,137 @@
-p{
-    font-size: medium;
-}
-
-footer{
-    display: flex;
-    flex-flow: column wrap;
-    margin-top: 40px;
+footer {
+    margin-top: 60px;
+    padding: 40px 8% 30px;
 
     background-color: var(--primary-color);
+
     width: 100%;
-    height: 200px;
-}
+    min-height: 220px;
 
-section{
-    padding-left: 20px;
-}
+    box-sizing: border-box;
 
-@media(min-width: 1024px){
-    footer{
-        flex-flow: row nowrap;
-        align-items: center;
-        justify-content: center;
-        gap: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+
+    // Linha superior
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+
+    // Linha inferior
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+    color: black;
+
+    // =========================
+    // LOGO
+    // =========================
+
+    .footer-logo {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        h1 {
+            margin: 0;
+
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        span {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    }
+
+    // =========================
+    // SEÇÕES
+    // =========================
+
+    section {
+        min-width: 220px;
+
+        h3 {
+            margin: 0 0 15px;
+
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 16px;
+        }
+
+        mat-icon {
+            font-size: 21px;
+            width: 21px;
+            height: 21px;
+        }
     }
 }
-@media(min-width: 768px){
-    footer{
-        flex-flow: row nowrap;
-        align-items: center;
-        justify-content: center;
-        gap: 180px;
+
+
+// =====================================
+// TABLET
+// =====================================
+
+@media (max-width: 900px) {
+
+    footer {
+        gap: 40px;
+
+        .footer-logo {
+            h1 {
+                font-size: 32px;
+            }
+        }
+
+        section {
+            min-width: 180px;
+        }
+    }
+}
+
+
+// =====================================
+// CELULAR
+// =====================================
+
+@media (max-width: 650px) {
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 30px;
+
+        padding: 35px 30px;
+
+        .footer-logo {
+            margin-bottom: 5px;
+
+            h1 {
+                font-size: 32px;
+            }
+        }
+
+        section {
+            min-width: 0;
+            width: 100%;
+
+            padding: 0;
+
+            h3 {
+                margin-bottom: 10px;
+            }
+        }
     }
 }

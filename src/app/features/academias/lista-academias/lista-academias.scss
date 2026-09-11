@@ -1,6 +1,10 @@
-.Gymlist {
-    display: flex;
-    flex-direction: row;
-    gap: 20;
-    
+.produto-selecionado {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.texto-sucesso {
+  color: green;
+  font-weight: bold;
 }

@@ -1,28 +1,8 @@
 #logo-video{
     width: 100%;
     height: auto;
-}
-#categorias-lista{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    justify-content: center;
-    padding: 10px 0;
+    margin-bottom: 20px;
 }
 
-.categoria-card{
-    display: flex;
-    flex-direction: column;
-    max-width: 220px;
 
-    p{
-        flex: 1 1 auto;
-    }
 
-    button{
-        
-    }
-    img{
-        height: 40%;
-    }
-}
