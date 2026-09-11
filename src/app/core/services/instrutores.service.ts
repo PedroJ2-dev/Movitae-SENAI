@@ -12,10 +12,13 @@ export class InstrutoresService {
 
     private readonly chaveStorage = "movitae-instrutores";
 
-    private instrutores = signal<ItemInstrutor[]>(this.carregarInstrutoresSalvo())
+    private instrutores = signal<ItemInstrutor[]>([])
+    carregando = signal(true)
 
     itens = computed(() => this.instrutores())
     nenhumInstrutor = computed(() => this.instrutores().length === 0)
+
+
 
 
     adicionar(instrutor: ItemInstrutor) {
@@ -38,6 +41,10 @@ export class InstrutoresService {
         if (!dadosSalvos) {
             return [];
         }
+        setTimeout(() => {
+            this.carregando.set(false);
+        }, 1000)
+
         try {
             return JSON.parse(dadosSalvos) as ItemInstrutor[];
         } catch {
@@ -53,8 +60,17 @@ export class InstrutoresService {
     }
 
     constructor() {
-    effect(() => {
-        this.salvarInstrutores(this.instrutores())
-    });
-}
+        setTimeout(() => {
+            this.instrutores.set(this.carregarInstrutoresSalvo());
+            this.carregando.set(false);
+        }, 2000);
+
+        effect(() => {
+            const itens = this.instrutores();
+
+            if (!this.carregando()) {
+                this.salvarInstrutores(this.instrutores());
+            }
+        });
+    }
 }

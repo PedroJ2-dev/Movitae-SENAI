@@ -1,5 +1,10 @@
 <section class="section-padrao">
   <section class="card-section">
+    @if (instrutoresFacade.carregando()) {
+      <span class="loading">
+        <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+      </span>
+    }
     @if (nenhumInstrutor() && !ehAdmin()) {
       <p id="aviso">Não tem nenhum instrutor disponivel, tente novamente mais tarde</p>
     }
@@ -69,7 +74,6 @@
             }
           </mat-form-field>
         </form>
-
         <button matButton type="button" (click)="adicionarInstrutor()">
           <mat-icon>add</mat-icon>Adicionar
         </button>

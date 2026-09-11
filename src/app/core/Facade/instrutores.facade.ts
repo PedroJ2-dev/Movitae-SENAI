@@ -11,6 +11,7 @@ export class InstrutoresFacade {
     private instrutoresService = inject(InstrutoresService);
     instrutores = this.instrutoresService.itens;
     nenhumInstrutor = this.instrutoresService.nenhumInstrutor;
+    carregando = this.instrutoresService.carregando;
     
     adicionar(instrutor: ItemInstrutor) {
         this.instrutoresService.adicionar(instrutor);

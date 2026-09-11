@@ -9,6 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-lista-instrutores',
@@ -19,7 +20,8 @@ import { MatIcon } from '@angular/material/icon';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatIcon
+    MatIcon,
+    MatProgressSpinnerModule
 ],
   templateUrl: './lista-instrutores.html',
   styleUrl: './lista-instrutores.scss',
